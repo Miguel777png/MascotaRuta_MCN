@@ -1,6 +1,8 @@
 package com.example.mascotaruta_mcn;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class RegistrarMascotaActivity extends AppCompatActivity {
+
+
+
+    private Button btnVolver2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +26,30 @@ public class RegistrarMascotaActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+
+        btnVolver2 = findViewById(R.id.btnvolver2);
+
+
+
+        btnVolver2.setOnClickListener(v -> {
+
+            Intent intent = new Intent(RegistrarMascotaActivity.this,MainActivity.class);
+            intent.addFlags(intent.FLAG_ACTIVITY_SINGLE_TOP | intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+
+
+        });
+
     }
+
+
+
+
+
+
+
+
 }
