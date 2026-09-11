@@ -3,6 +3,7 @@ package com.example.mascotaruta_mcn;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class ConfirmacionActivity extends AppCompatActivity {
 
 
-    private Button btnVolver;
+    private Button btnVolver,btnconfirm;
+    private TextView txtnombre,txtcomida,txtjuguete,txtraza,txtvacuna,txtsociabilidad,txtcastrado,txtseguimiento;
+
 
 
 
@@ -31,6 +34,45 @@ public class ConfirmacionActivity extends AppCompatActivity {
 
 
         btnVolver = findViewById(R.id.btnvolver);
+        btnconfirm = findViewById(R.id.btnconfirm);
+
+
+        txtnombre = findViewById(R.id.txtnombre);
+        txtcomida = findViewById(R.id.txtcomida);
+        txtjuguete = findViewById(R.id.txtjuguete);
+
+        txtraza = findViewById(R.id.txtraza);
+
+        txtvacuna = findViewById(R.id.txtvacuna);
+
+        txtsociabilidad = findViewById(R.id.txtsociabilidad);
+
+        txtcastrado = findViewById(R.id.txtcastrado);
+
+        txtseguimiento = findViewById(R.id.txtseguimiento);
+
+
+
+
+        Intent intentrecibido = getIntent();
+
+
+        txtnombre.setText(" Nombre: " + intentrecibido.getStringExtra("CLAVE_NOMBRE"));
+        txtcomida.setText("Comida favorita: " + intentrecibido.getStringExtra("CLAVE_COMIDA"));
+        txtjuguete.setText("Juguete favorito: " + intentrecibido.getStringExtra("CLAVE_JUGUETE"));
+        txtraza.setText("Tipo de raza: " + intentrecibido.getStringExtra("CLAVE_RAZA"));
+        txtvacuna.setText("Vacunas al dia : " + intentrecibido.getStringExtra("CLAVE_VACUNAS"));
+        txtsociabilidad.setText("Nivel Sociabilidad: " + intentrecibido.getStringExtra("CLAVE_SOCIABILIDAD"));
+        txtcastrado.setText("Castrado: " + intentrecibido.getStringExtra("CLAVE_CASTRADO"));
+        txtseguimiento.setText("Seguimiento: " + intentrecibido.getStringExtra("CLAVE_SEGUIMIENTO"));
+
+
+
+
+
+
+
+
 
 
 
@@ -43,7 +85,6 @@ public class ConfirmacionActivity extends AppCompatActivity {
 
 
         });
-
 
 
 
